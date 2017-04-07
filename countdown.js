@@ -5,13 +5,28 @@ MARGIN_TOP = 60;
 MARGIN_LEFT = 30;
 
 // 可以改改看
-var endTime = new Date(2017, 03, 07, 00, 00, 00);
+
+var submitBtn = document.getElementById('submit');
+// console.log(year);
+var endTime = new Date(2017, 03, 11, 00, 00, 00);
 var showTimeSeconds = 0;
 var balls = [];
 const colors = ["#3b5", "#09c", "#a6c", "#93c", "#9c0", "#690", "#fb3", "#f80", "#f44", "#c0c"];
+var dateArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
+submitBtn.onclick = function() {
+    var year = parseInt(document.getElementById('timeY').value);
+    var month = dateArr[parseInt(document.getElementById('timeM').value) - 1];
+    var day = parseInt(document.getElementById('timeD').value);
+    var hour = document.getElementById('timeHou').value;
+    var min = document.getElementById('timeMin').value;
+    var sec = document.getElementById('timeSec').value;
+    endTime = new Date(month + " " + day + "," + year + " " + hour + ":" + min + ":" + sec);
+    console.log(endTime);
+}
 
 window.onload = function() {
+
     WINDOW_WIDTH = document.body.clientWidth;
     WINDOW_HEIGHT = WINDOW_WIDTH / 2;
     // document.body.clientHeight;
@@ -32,6 +47,7 @@ window.onload = function() {
         updata();
         // if (showTimeSeconds=0) {alert("fjsdafh");}
     }, 50)
+
 }
 
 

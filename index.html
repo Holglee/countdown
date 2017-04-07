@@ -10,9 +10,58 @@
     canvas{
     	/*background: url(../图片库/5588a847af1ed576eb5e0809b4c2a5eb_large_meitu_1.jpg) no-repeat center center;*/
     }
+    .box{
+        width: 800px;
+        height: 32px;
+        box-sizing: border-box;
+        line-height: 32px;
+        text-align: center;
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        margin-left: -400px;
+    }
+    .box label{
+        color: #009966;
+        font-weight: bold;
+        padding-right: 5px;
+    }
+    .box input{
+        display: inline-block;
+        width: 10%;
+        height: 100%;
+        padding-left: 5px;
+        border:2px solid #99CC99;
+        outline: none;
+        border-radius: 8%;
+        box-sizing: border-box;
+    }
+    .box input[type="submit"]{
+        background-color: #999966;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color .4s ease-in-out;
+        -webkit-transition: background-color .4s ease-in-out;
+
+    }
+    .box input[type="submit"]:hover{
+        background-color: #CC3333;
+    }
     </style>
 </head>
 <body>
+
+    <div class="box">
+    <label for="">输入倒计时终点:
+    </label>
+    <input type="text" id="timeY" placeholder="年" value="2017" >
+    <input type="text" id="timeM" placeholder="月" value="04">
+    <input type="text" id="timeD" placeholder="日" value="11">
+    <input type="text" id="timeHou" placeholder="小时" value="00">
+    <input type="text" id="timeMin" placeholder="分钟" value="00">
+    <input type="text" id="timeSec" placeholder="秒" value="00">
+    <input type="submit" id="submit">
+    </div>
     <canvas id="canvas" height=100%>
         当前浏览器不支持Canvas，请更换浏览器后再试
     </canvas>
